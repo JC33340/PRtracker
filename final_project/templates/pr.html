@@ -1,0 +1,86 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}
+PR
+{% endblock %}
+
+{% block main %}
+
+<form action = "/pr" method = "post" class = 'input-pr'>
+    Submit a new PR:
+    <select name = 'select_pr'>
+        <option value = 'none' selected hidden disabled>Exercise</option>
+        <option value = 'squat'>Squat</option>
+        <option value = 'bench'>Bench</option>
+        <option value = 'deadlift'>Deadlift</option>
+    </select>
+    <input name = 'weight' type = 'number' placeholder = 'Weight(kg)' autofocus autocomplete = 'off'>
+    <input name = 'date' type = 'date'>
+    <button type = 'submit' class = "btn btn-outline-secondary mt-2">Submit</button>
+</form>
+
+<div class = "mt-5">
+    {% if squat|length > 0 %}
+    <h3><b>Squat</b></h3>
+    <p>Your Current PR is: <b>{{max_squat[0][0]}}Kg</b>. &nbsp &nbsp Performed on: {%for squat in max_squat %} <b>{{squat[1]}}</b>, {% endfor %}</p>
+
+    <table>
+        <tr>
+            <th>Weight (Kg)</th>
+            <th>Date</th>
+        </tr>
+        {% for squat in squat %}
+        <tr>
+            <td>{{squat[1]}}</td>
+            <td>{{squat[2]}} <form action = "/delete" method = 'post'><button type = 'submit' class = "btn btn-outline-danger" name = 'squat_button' value = {{squat[2]}}>Delete</button></form></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% endif %}
+</div>
+
+<div class = "mt-5">
+    {% if bench|length > 0 %}
+    <h3><b>Bench</b></h3>
+    <p>Your Current PR is: <b>{{max_bench[0][0]}}Kg</b>. &nbsp &nbsp Performed on: {%for bench in max_bench %} <b>{{bench[1]}}</b>, {% endfor %}</p>
+
+    <table>
+        <tr>
+            <th>Weight (Kg)</th>
+            <th>Date</th>
+        </tr>
+        {% for bench in bench %}
+        <tr>
+            <td>{{bench[1]}}</td>
+            <td>{{bench[2]}} <form action = "/delete" method = 'post'><button type = 'submit' class = "btn btn-outline-danger" name = 'bench_button' value = {{bench[2]}}>Delete</button></form> </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% endif %}
+</div>
+
+<div class = "mt-5">
+    {% if deadlift|length > 0 %}
+    <h3><b>Deadlift</b></h3>
+    <p>Your Current PR is: <b>{{max_deadlift[0][0]}}Kg</b>. &nbsp &nbsp Performed on: {%for deadlift in max_deadlift %} <b>{{deadlift[1]}}</b>, {% endfor %}</p>
+
+    <table>
+        <tr>
+            <th>Weight (Kg)</th>
+            <th>Date</th>
+        </tr>
+        {% for deadlift in deadlift %}
+        <tr>
+            <td>{{deadlift[1]}}</td>
+            <td>{{deadlift[2]}}<form action = "/delete" method = 'post'><button type = 'submit' class = "btn btn-outline-danger" name = 'deadlift_button' value = {{deadlift[2]}}>Delete</button></form></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}

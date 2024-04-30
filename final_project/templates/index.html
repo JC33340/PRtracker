@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block main %}
+
+<h2>Hello, {{username}}</h2>
+
+{% if max_squat %}
+<div class = 'pr-div'>
+    <h3><b>Squat</b></h3> &nbsp &nbsp PR:&nbsp{{max_squat[0][0]}} Kg.&nbsp &nbsp Last entry at: {{dates[0][0]}} &nbsp &nbsp You have seen an improvement of: <b>{{((max_squat[0][0] - start_weight[0][0])*100/start_weight[0][0])|round|int}} % </b>
+    <br>
+    <br>
+    For information about proper squat form click <a href = "https://www.youtube.com/watch?v=bEv6CCg2BC8&ab_channel=JeffNippard">here</a>
+</div>
+{% endif %}
+
+{% if max_bench %}
+<div class = 'pr-div'>
+    <h3><b>Bench</b></h3> &nbsp &nbsp PR:&nbsp{{max_bench[0][0]}} Kg.&nbsp &nbsp Last entry at: {{dates[1][0]}} &nbsp &nbsp You have seen an improvement of: <b>{{((max_bench[0][0] - start_weight[1][0])*100/start_weight[1][0])|round|int}} % </b>
+    <br>
+    <br>
+    For information about proper bench form click <a href = "https://www.youtube.com/watch?v=vcBig73ojpE&ab_channel=JeffNippard">here</a>
+</div>
+{% endif %}
+
+{% if max_deadlift %}
+<div class = 'pr-div'>
+    <h3><b>Deadlift</b></h3> &nbsp &nbsp PR:&nbsp{{max_deadlift[0][0]}} Kg.&nbsp &nbsp Last entry at: {{dates[2][0]}} &nbsp &nbsp You have seen an improvement of: <b>{{((max_deadlift[0][0] - start_weight[2][0])*100/start_weight[2][0])|round|int}} % </b>
+    <br>
+    <br>
+    For information about proper deadlift form click <a href = "https://www.youtube.com/watch?v=VL5Ab0T07e4&ab_channel=JeffNippard">here</a>
+</div>
+{% endif %}
+
+{% endblock %}

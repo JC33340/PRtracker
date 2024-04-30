@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+
+<div class = 'login'>
+    <form action = "/register" method = 'post'>
+
+        <label class = "mt-2 mb-4">Enter username:<input type = "text" placeholder = "Username" name = 'username' autofocus autocomplete = "off"></label>
+        <br>
+
+        <label class = 'mb-4'>Enter password:<input type = "password" placeholder = "Password" name = 'password' autofocus autocomplete = "off" id = "password"></label>
+        <br>
+
+        <label>Confirm password:<input type = "password" placeholder = "Confirm Password" name = 'confirm_password' autofocus autocomplete = "off" id = 'confirm'></label>
+        <input class = 'mb-4 mt-3' type = 'checkbox' id = 'show_password'>Show Password
+        <br>
+
+        <label class = 'mb-4'>Enter Bodyweight:<input type = "number" placeholder = "Body Weight" name = 'body_weight' autofocus autocomplete = "off"></label>
+        <br>
+        <label><button type="submit" class="btn btn-outline-secondary mb-4">Register</button></label>
+
+    </form>
+</div>
+
+{% endblock %}

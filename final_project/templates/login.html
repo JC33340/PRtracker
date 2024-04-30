@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+
+<div class = 'login'>
+    <form action = "/login" method = "post">
+        <label class = "mt-4">Username: <input class ='mb-4' type = "text" placeholder = "Username" name = 'username' autofocus autocomplete = "off"></label>
+        <br>
+        <label'>Password: <input class = 'mb-4' type = "password" placeholder = "Password" name = 'password' autofocus autocomplete = "off"></label>
+        <br>
+        <label><button type="submit" class="btn btn-outline-secondary">Login</button></label>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

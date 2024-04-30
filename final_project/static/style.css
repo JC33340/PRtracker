@@ -1,0 +1,77 @@
+nav .navbar-brand{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
+.navbar{
+    background-color: black;
+    height: 100px;
+}
+
+.nav-link{
+    color: white;
+    font-size: 17px;
+}
+
+.nav-link:hover{
+    color: grey;
+}
+
+.navbar-nav{
+    padding: 10px;
+    padding-top: 20px;
+}
+
+#logout{
+    font-size: 20px
+}
+
+.login{
+    border: 2px solid black;
+    width: 20%;
+    margin-left: 40%;
+    border-radius: 25px;
+    color: grey;
+}
+
+.btn{
+    font-size: 15px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.pr-div{
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    transition: box-shadow .3s;
+}
+
+.pr-div:hover{
+    box-shadow: 0 0 11px #575854;
+}
+
+table{
+    width: 75%;
+    margin: auto;
+}
+
+th{
+    border-bottom: 2px solid black;
+}
+
+tr:nth-child(even){
+    background-color: #CCCDC4;
+}
+
+tr{
+    line-height: 40px;
+}
+.input-pr input{
+    width: 150px;
+    height: 23px;
+}
